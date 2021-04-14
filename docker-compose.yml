@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    image: ci-web-development
+    container_name: ci-web-development
+    restart: always
+    ports:
+      - 44010:80
+      - 44011:443
+    volumes:
+      - .:/var/www/html
